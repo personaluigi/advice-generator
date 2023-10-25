@@ -5,8 +5,7 @@ const btn = document.getElementById('btn-dice');
 fetch('https://api.adviceslip.com/advice')
     .then((resp) => resp.json())
     .then((data) => {
-        let id = data.slip.id;
-        let advice = data.slip.advice;
+        const {id, advice} = data.slip;
         textId.innerText = `ADVICE #${id}`;
         text.innerText = `"${advice}"`;
     })
